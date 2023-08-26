@@ -10,7 +10,7 @@ const ApiService = {
       throw error;
     }
   },
-  
+
   getUserById: async (userId) => {
     try {
       const response = await axios.get(`https://randomuser.me/api?id=${userId}`);
@@ -23,3 +23,5 @@ const ApiService = {
 };
 
 export default ApiService;
+
+

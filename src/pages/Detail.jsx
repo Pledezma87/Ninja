@@ -14,21 +14,22 @@ function Detail() {
         const selectedUser = usersData[id];
         setUserDetails(selectedUser);
       } catch (error) {
-        // Manejar el error aquí si es necesario
+        console.error(error)
       }
     }
 
     fetchUserDetails();
   }, [id]);
+  
 
   return (
-    <div className="container mt-5">
-      <h1 className="mb-4">Detalles del Usuario</h1>
+    <div table class="table table-striped">
+      <h1 className=" container-sm mb-4-card bg-primary text-white">Detalles del Usuario</h1>
       {userDetails ? (
-        <div className="card mb-3">
-          <img src={userDetails.picture.large} alt="Foto de usuario" className="card-img-top" />
-          <div className="card-body">
-            <h5 className="card-title">{userDetails.name.title} {userDetails.name.first} {userDetails.name.last}</h5>
+        <div className="container-sm card mb-5">
+          <img src={userDetails.picture.large} alt="Foto de usuario" className="card-img-top" style={{ width: '300px', height: '300px' }}/>
+          <div className="table-info">
+            <p className="card-text">{userDetails.name.title} {userDetails.name.first} {userDetails.name.last}</p>
             <p className="card-text">Género: {userDetails.gender}</p>
             <p className="card-text">Email: {userDetails.email}</p>
             <p className="card-text">Fecha de Nacimiento: {userDetails.dob.date}</p>
